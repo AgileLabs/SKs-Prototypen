@@ -1,0 +1,14 @@
+<div class="container">
+  <form>
+    <div class="formGroup">
+      <label for="word">Wort</label>
+      <input [(ngModel)]="random.word" type="text" class="form-control" id="word" name="word" disabled>
+    </div>
+    <div class="formGroup">
+      <label for="translation">Übersetzung</label>
+      <input [(ngModel)]="random.translation" type="text" class="form-control" id="translation" name="translation">
+    </div>
+    <br>
+    <button type="button" class="btn btn-success" (click)="nextWord()">Nächster</button>
+  </form>
+</div>
