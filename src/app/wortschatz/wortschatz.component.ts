@@ -8,15 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class WortschatzComponent implements OnInit {
 
   private wortschartz = [
-    { word : 'Montag', translation : 'segunda-feira' },
-    { word : 'Dienstag', translation : 'terça-feira' },
-    { word : 'Mittwoch', translation : 'quarta-feira' },
-    { word : 'Donnerstag', translation : 'quinta-feira' },
-    { word : 'Freitag', translation : 'sexta-feira' },
-    { word : 'Samstag', translation : 'sábado' },
-    { word : 'Sonntag', translation : 'domingo' },
+    { word : 'Montag', options : ['segunda-feira', 'terça-feira', 'quarta-feira'] },
+    { word : 'Dienstag', options : ['sábado', 'terça-feira', 'quarta-feira'] },
+    { word : 'Mittwoch', options : ['quarta-feira', 'terça-feira', 'sexta-feira'] },
+    { word : 'Donnerstag', options : ['quinta-feira', 'sexta-feira', 'sábado'] },
+    { word : 'Freitag', options : ['segunda-feira', 'sexta-feira', 'quarta-feira'] },
+    { word : 'Samstag', options : ['domingo', 'terça-feira', 'sábado'] },
+    { word : 'Sonntag', options : ['quinta-feira', 'domingo', 'quarta-feira'] },
   ];
-
   random;
 
   constructor() {  }
@@ -28,7 +27,7 @@ export class WortschatzComponent implements OnInit {
   nextWord(): void {
     this.setRandomWordToTranslate();
   }
-  
+
   private setRandomWordToTranslate(): void {
     this.random = this.wortschartz[Math.floor(Math.random() * this.wortschartz.length)];
   }
