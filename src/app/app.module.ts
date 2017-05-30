@@ -6,12 +6,15 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LessonsComponent } from './lessons/lessons.component';
+import { LessonFilterService } from './lessons/lesson-filter.service';
 import { LoginComponent } from './login/login.component';
 import { WortschatzComponent } from './wortschatz/wortschatz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LessonsComponent,
     LoginComponent,
     WortschatzComponent
   ],
@@ -22,7 +25,7 @@ import { WortschatzComponent } from './wortschatz/wortschatz.component';
     AppRoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [LessonFilterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
